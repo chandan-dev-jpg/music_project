@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BeatWave — Music Player</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">BEAT<span>WAVE</span></a>
+  <div class="nav-search">
+    <input type="text" id="search-input" placeholder="Search songs, artists..." value="">
+    <button id="search-btn">Search</button>
+  </div>
+  <div class="nav-links">
+    <button class="active" onclick="filterFav(false,this)">All Songs</button>
+    <button onclick="filterFav(true,this)">❤ Favorites</button>
+    <button id="theme-btn">☀ Light</button>
+  </div>
+</nav>
+
+<!-- LAYOUT -->
+<div class="layout">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-label">Your Personal Music Hub</div>
+    <div class="hero-title">BEAT<br><span>WAVE</span></div>
+    <div class="hero-sub">Stream 30-second previews from millions of songs. Powered by iTunes API.</div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num" id="stat-songs">0</div><div class="stat-label">Songs</div></div>
+      <div class="stat"><div class="stat-num" id="stat-artists">0</div><div class="stat-label">Artists</div></div>
+      <div class="stat"><div class="stat-num" id="stat-favs">0</div><div class="stat-label">Favorites</div></div>
+    </div>
+  </div>
+
+  <!-- GENRE TABS -->
+  <div class="genre-tabs" id="genre-tabs">
+    <button class="genre-btn active" data-q="top hits 2024">🔥 Top Hits</button>
+    <button class="genre-btn" data-q="arijit singh">🎤 Arijit Singh</button>
+    <button class="genre-btn" data-q="bollywood 2024">🎬 Bollywood</button>
+    <button class="genre-btn" data-q="punjabi hits">🎵 Punjabi</button>
+    <button class="genre-btn" data-q="taylor swift">🌟 Taylor Swift</button>
+    <button class="genre-btn" data-q="lo-fi chill">🌙 Lo-Fi</button>
+    <button class="genre-btn" data-q="hip hop">🎧 Hip Hop</button>
+    <button class="genre-btn" data-q="romantic songs">💕 Romantic</button>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+    <div class="section-head">
+      <div class="section-title" id="section-title">TOP HITS</div>
+      <div class="section-count" id="section-count">Loading...</div>
+    </div>
+    <div id="song-list"></div>
+  </div>
+
+  <!-- SIDEBAR PLAYER -->
+  <div class="sidebar">
+    <div class="player-top">
+      <div class="now-label">Now Playing</div>
+      <div class="cover-wrap">
+        <div class="cover-ring" id="cover-ring"></div>
+        <div id="cover">🎵</div>
+      </div>
+      <div class="np-info">
+        <div id="np-title">Select a Song</div>
+        <div id="np-artist">— artist —</div>
+        <div id="np-album"></div>
+        <div id="vis">
+          <div class="vb" style="--d:.5s;--h:17px"></div>
+          <div class="vb" style="--d:.7s;--h:21px"></div>
+          <div class="vb" style="--d:.42s;--h:14px"></div>
+          <div class="vb" style="--d:.8s;--h:23px"></div>
+          <div class="vb" style="--d:.6s;--h:18px"></div>
+          <div class="vb" style="--d:.47s;--h:15px"></div>
+          <div class="vb" style="--d:.72s;--h:20px"></div>
+          <div class="vb" style="--d:.55s;--h:13px"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prog-area">
+      <div class="prog-bar" id="prog-bar">
+        <div id="prog-fill"></div>
+      </div>
+      <div class="prog-times">
+        <span id="t-cur">0:00</span>
+        <span id="t-dur">0:00</span>
+      </div>
+    </div>
+
+    <div class="ctrl-area">
+      <div class="ctrl-row">
+        <button class="cb" id="shuf-btn" title="Shuffle">⇄</button>
+        <button class="cb" id="prev-btn" title="Previous">⏮</button>
+
+        <!-- TERA PLAY/PAUSE BUTTON -->
+        <button id="playPause">Play</button>
+
+        <button class="cb" id="next-btn" title="Next">⏭</button>
+        <button class="cb" id="rep-btn" title="Repeat">↺</button>
+      </div>
+      <div class="vol-row">
+        <span>🔈</span>
+        <input type="range" id="vol-slider" min="0" max="100" value="80">
+        <span id="vol-label">80</span>
+        <span>🔊</span>
+      </div>
+    </div>
+
+    <div class="sidebar-list" id="sidebar-list"></div>
+    <div id="status-bar">Ready</div>
+  </div>
+
+</div>
+
+<!-- AUDIO ELEMENT — id="song" (tera original code ke liye) -->
+<audio id="song" crossorigin="anonymous"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
