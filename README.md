@@ -1,25 +1,34 @@
-# 🎵 Music Website
-Live Demo:https://beatwave-music.netlify.app/
-<br>
-A modern and responsive music website built using HTML and CSS. This project showcases a clean UI design for browsing music, albums, and playlists.
+# 🐍 Snake Game  
 
----
+Live Demo: https://your-snake-game-link.netlify.app/  
+<br>  
+A simple and interactive Snake Game built using HTML, CSS, and JavaScript. The player controls a snake that moves around the screen to eat food and grow longer. The game becomes more challenging as the snake increases in size.  
 
-## 🚀 Features
+---  
 
-- 🎧 Beautiful and responsive UI
-- 🎼 Music sections (albums, playlists, artists)
-- 📱 Mobile-friendly design
-- ⚡ Fast loading and simple structure
-- 🎨 Styled using pure CSS
+## 🚀 Features  
 
----
+- 🎮 Smooth snake controls using keyboard  
+- 🍎 Random food generation  
+- 📈 Score tracking system  
+- ⚡ Increasing difficulty as snake grows  
+- 💥 Game over on collision  
 
-## 🛠️ Tech Stack
+---  
 
-- HTML5
-- CSS3
+## 🛠️ Tech Stack  
 
----
+- HTML5  
+- CSS3  
+- JavaScript  
 
-## 📂 Project Structure
+---  
+
+## 📂 Project Structure  
+
+```bash
+snake-game/
+│── index.html
+│── style.css
+│── script.js
+│── assets/
